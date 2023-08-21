@@ -14,7 +14,7 @@ function HomeComponent(){
     useEffect(()=>{
         console.log("hi");
     },[name,address]);
-
+console.log("Hello")
     return(  
         <div>
             <Navbar text="Home "></Navbar>
