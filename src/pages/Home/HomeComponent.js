@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 
 function HomeComponent(){
+    //state ccreation
     const[name,setName]=useState("")
     const[address,setAddress]=useState("")
     const[salary,setSalary]=useState("")
@@ -18,7 +19,7 @@ console.log("Hello")
     return(  
         <div>
             <Navbar text="Home "></Navbar>
-
+             
             <h1 style={{fontFamily:'revert',color:'green',fontStyle:'italic'}}>This is my Home Component</h1>
             
             <RoundedButton text="Click to go About"/><br/><br/>

@@ -1,11 +1,12 @@
 import HomeComponent from "./pages/Home/HomeComponent";
 import AboutComponent from "./pages/About/AboutComponent"; 
+import Home02Component from "./pages/Home02/Home02Component";
 
 function App() {
   return (
     <div className="App">
     
-     <HomeComponent/>
+     <Home02Component/>
     </div>
   );
 }
