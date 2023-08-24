@@ -1,4 +1,5 @@
 import Navbar from "../../components/Navigation/Navbar";
+import Form from "../../components/Form/Form";
 
 
 function Home02Component(){
@@ -7,6 +8,8 @@ function Home02Component(){
         <div>
             <Navbar header="Home"></Navbar>
             <div className="col">
+               
+                <Form></Form>
 
             </div>
             <div className="col">
