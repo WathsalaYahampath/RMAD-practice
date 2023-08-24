@@ -43,6 +43,18 @@ const addStudent=async()=>{
    // console.log(email+" "+name+""+pn+" "+age+" "+address)
 }
 
+const getStudents=async()=>{
+    const querySnapshot =await getDocs(collection(db, "Students"));
+    console.log(querySnapshot)
+    setStudents(querySnapshot.docs.map((doc) => ({
+        ...doc.data() //denata thina array eke pitipassata danna kiyala... dot walin kiynw
+
+    })));
+
+    console.log(students);
+
+}
+
 const clearData=()=>{
     setAddress('');
     setName('');
@@ -52,18 +64,7 @@ const clearData=()=>{
 
 }
 
-const getStudents=async()=>{
-    const querySnapshot =await getDocs(collection(db, "Students"));
-    querySnapshot.forEach((doc) => {
-    // doc.data() is never undefined for query doc snapshots
-    
-    //console.log(doc.id, " => ", doc.data());
 
-    setStudents(QuerySnapshot.docs.map)
-
-    });
-
-}
 
     return(
         <div>
@@ -106,23 +107,23 @@ const getStudents=async()=>{
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                                </tr>
+                                
+                                {
+                                    students.map(student=>{
+                                        return(
+                                            <tr>
+                                               
+                                                <td>{student.name}</td>
+                                                <td>{student.email}</td>
+                                                <td>{student.pn}</td>
+                                                <td>{student.address}</td>
+                                            </tr>
+
+                                        )
+                                    })
+                                }
+                                
+                                
                             </tbody>
                             </table>
                 </div>
