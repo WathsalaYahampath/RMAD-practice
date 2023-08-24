@@ -12,8 +12,8 @@ function HomeComponent(){
     const[salary,setSalary]=useState("")
     const[age,setAge]=useState("")
 
-    useEffect(()=>{
-        console.log("hi");
+    useEffect(()=>{              //use effect eka[] athule mukuth nathi welawata component eka call wenakotama use effect eka call wee..
+        console.log("hi");        // ehi [] athulata state list eka dunnoth state eka change wenkotama use effect eka call wee.
     },[name,address]);
 console.log("Hello")
     return(  
